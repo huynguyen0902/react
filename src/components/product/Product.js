@@ -1,9 +1,7 @@
 import React , { Component } from 'react';
 class Product extends Component{
     Show_Product = (children, image, edit) => {
-        console.log({edit})
-        if({edit}){
-            console.log("aaaaaaaaaaaaaaaa")
+        if(edit){
             return <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                     <div className="panel panel-default">
                         <div className="panel-heading">
@@ -28,13 +26,9 @@ class Product extends Component{
         return <h1>false</h1>
         
     }
-    a = () =>{
-        return <h1>1234</h1>
-    }
     render(){
         return(
             <div>
-                
                 {this.Show_Product(this.props.children, this.props.image, this.props.edit)}
             </div>
             
