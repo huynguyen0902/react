@@ -1,0 +1,7 @@
+#contentHeader {
+    background: black;
+    height: 70px;
+}
+#contentHeader div{
+    color: white;
+}

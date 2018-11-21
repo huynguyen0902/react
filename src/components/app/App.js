@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
-import Hello from '../hello/Hello'
 import Product from '../product/Product';
+import Header from '../header/Header';
+import Content from '../content/Content';
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      edit : true
+      products : [
+        {
+          name: "iphone 7",
+          image: "https://images-na.ssl-images-amazon.com/images/I/31hM0MspgOL.jpg"
+        },
+        {
+          name: "samsung",
+          image: "https://www.duchuymobile.com/images/detailed/11/samsung-galaxy-note-fe-cong-ty-duchuymobile-500x500.jpg"
+        }
+      ]
     };
+  }
+  Show_Product = () =>{
+    const products = this.state.products.map((item, index) => 
+      <Product key={index} image={item.image}>{item.name}</Product>
+    );
+    return products;
   }
   render() {
     return (
-      <div className="container">
-        <Product edit={this.state.edit} image="https://images-na.ssl-images-amazon.com/images/I/31hM0MspgOL.jpg">Iphone 7</Product>
-        <Product edit={this.state.edit} image="https://www.duchuymobile.com/images/detailed/11/samsung-galaxy-note-fe-cong-ty-duchuymobile-500x500.jpg">SamSung S9</Product>
+      <div>
+        <Header></Header>
+        <Content></Content>
       </div>
       
     );
