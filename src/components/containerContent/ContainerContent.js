@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Input from '../input/Input';
-import './Content.css'
+import InputContent from '../inputContent/InputContent';
+import './ContainerContent.css'
 import MainContent from '../mainContent/MainContent';
-class Content extends Component{
+class ContainerContent extends Component{
     render(){
         return(
             <div className="container" id="containerContent">
@@ -11,7 +11,7 @@ class Content extends Component{
                         <div className="container" id="titleContent"> Patient List</div>
                     </div>
                     <div className="panel-body">
-                        <Input></Input>
+                        <InputContent></InputContent>
                         <MainContent></MainContent>
                     </div>
                     
@@ -20,4 +20,4 @@ class Content extends Component{
         );
     }
 }
-export default Content;
+export default ContainerContent;

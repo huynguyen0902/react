@@ -3,7 +3,6 @@ import './Header.css';
 import Time from '../time/Time';
 class Header extends Component{
     render(){
-        console.log("aa")
         return(
             
             <div id="contentHeader">

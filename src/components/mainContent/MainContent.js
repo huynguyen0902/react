@@ -1,10 +1,58 @@
 import React, {Component} from 'react';
+import ReactDOM from "react-dom";
+import Pagination from "react-js-pagination";
 class MainContent extends Component{
-    Select_Patient = () => {
-        alert("aa")
+    constructor(props){
+        super(props)
+        this.state = {
+            data: [
+                {
+                    Status: "Active",
+                    PatientID: "1",
+                    Chart: "0123",
+                    PatientName: "John"
+                }
+
+            ],
+            isAdd: false
+        };
     }
+    addElement = () => {
+        let ne = this.state.data;
+        ne.push({
+            Status: "Active",
+            PatientID: "1",
+            Chart: "0123",
+            PatientName: "John"
+        })
+        this.setState({
+            data: ne
+        });
+    }
+    paging = () =>{
+        let totalElement = this.state.data;
+        console.log(totalElement.length);
+        return <Pagination
+            itemsCountPerPage={10}
+            totalItemsCount={450}
+            pageRangeDisplayed={5}
+        />
+    }
+
     render(){
+        let elements = this.state.data.map((item, index) => {
+            let result = '';
+            result = <tr key = {index}>
+                        <td>{item.Status}</td>
+                        <td>{item.PatientID}</td>
+                        <td>{item.Chart}</td>
+                        <td>{item.PatientName}</td>
+                    </tr>
+            return result;
+        }) ;
+        
         return(
+            <div>
             <table className="table table-bordered table-hover">
                 <thead>
                     <tr>
@@ -21,34 +69,12 @@ class MainContent extends Component{
                     </tr>
                 </thead>
                 <tbody>
-                    <tr onClick={() => this.Select_Patient()}>
-                        <td>Active</td>
-                        <td>1</td>
-                        <td>aa</td>
-                        <td>asd</td>
-                        <td>sadasd</td>
-                        <td>Active</td>
-                        <td>Active</td>
-                        <td>Active</td>
-                        <td>Active</td>
-                        <td>Active</td>
-
-                    </tr>
-                    <tr>
-                        <td>Active</td>
-                        <td>1</td>
-                        <td>aa</td>
-                        <td>asd</td>
-                        <td>sadasd</td>
-                        <td>Active</td>
-                        <td>Active</td>
-                        <td>Active</td>
-                        <td>Active</td>
-                        <td>Active</td>
-
-                    </tr>
+                    {elements}
                 </tbody>
             </table>
+            <button className="btn btn-primary" onClick={() => this.addElement()}>add</button>
+            {this.paging()}
+            </div>
         );
     }
 }

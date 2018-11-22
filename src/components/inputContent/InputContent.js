@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import './Input.css'
-class Input extends Component{
+import './InputContent.css'
+class InputContent extends Component{
     render(){
         return(
             <div>
@@ -52,4 +52,4 @@ class Input extends Component{
         );
     }
 }
-export default Input;
+export default InputContent;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Product from '../product/Product';
 import Header from '../header/Header';
-import Content from '../content/Content';
+import ContainerContent from '../containerContent/ContainerContent';
 class App extends Component {
   constructor(props){
     super(props);
@@ -29,7 +29,7 @@ class App extends Component {
     return (
       <div>
         <Header></Header>
-        <Content></Content>
+        <ContainerContent></ContainerContent>
       </div>
       
     );
