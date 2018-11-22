@@ -29,6 +29,21 @@ class MainContent extends Component{
             data: ne
         });
     }
+    removeElement = () =>{
+        let elements = this.state.data;
+        if(elements.length <= 1){
+            this.setState({
+                data: elements
+            })
+        }
+        else{
+            elements.pop();
+            this.setState({
+                data: elements
+            })
+        }
+        
+    }
     paging = () =>{
         let totalElement = this.state.data;
         console.log(totalElement.length);
@@ -73,6 +88,7 @@ class MainContent extends Component{
                 </tbody>
             </table>
             <button className="btn btn-primary" onClick={() => this.addElement()}>add</button>
+            <button className="btn btn-danger" onClick={() => this.removeElement()}>remove</button>
             {this.paging()}
             </div>
         );

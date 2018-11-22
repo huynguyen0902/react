@@ -46,6 +46,10 @@ class InputContent extends Component{
                         <button type="button" className="btn btn-primary" id="btnClear">Clear search</button>
                     </div>  
                 </div>
+                <div className="col-xs-6">
+                    <button className="btn btn-primary" onClick={() => this.addElement()}>add</button>
+                    <button className="btn btn-danger" onClick={() => this.removeElement()}>remove</button>
+                </div>
                 
             </div>
             
